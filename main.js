@@ -5,13 +5,17 @@ import Receta from "./receta.js"
 class Main{
     constructor(){
         this.unidad1 = "Kilos"
-        this.unidad2 = "Litros"
+        this.unidad2 = "Gramos"
 
         this.cantidad = new Cantidad(127,this.unidad1)
-        this.cantidad2 = new Cantidad(5, this.unidad2)
+        this.cantidad2 = new Cantidad(500, this.unidad2)
+        this.cantidad3 = new Cantidad(50, this.unidad2)
 
-        this.ingrediente = new Ingrediente(this.cantidad, "sal", 350)
-        this.ingrediente2 = new Ingrediente(this.cantidad2, "leche", 23 )
+        this.ingrediente = new Ingrediente(this.cantidad, "Huevos", 350)
+        this.ingrediente2 = new Ingrediente(this.cantidad2, "Jamon", 23 )
+        this.ingrediente3 = new Ingrediente(this.cantidad3, "Sal", 123)
+
+        this.receta = new Receta("Huevos con jamon", "Kevin Mancilla")
     }
 
     getDescripcion(){
@@ -23,11 +27,17 @@ class Main{
         console.log(this.ingrediente.getDescripcion())
         console.log(this.ingrediente2.getDescripcion())
     }
+
+    getReceta(){
+        this.receta.getIngredientes(this.ingrediente)
+        this.receta.getIngredientes(this.ingrediente2)
+        this.receta.getIngredientes(this.ingrediente3)
+        this.receta.imprimirEnConsola()
+    }
 }
 
 let verificar = new Main ()
 
-verificar.getDescripcion()
-verificar.getIngrediente()
+verificar.getReceta()
 
 
