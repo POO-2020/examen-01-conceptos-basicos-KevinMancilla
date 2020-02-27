@@ -5,7 +5,7 @@ export default class Receta{
      * @param {string} autor 
      * @param {*} ingredientes 
      */
-    constructor(nombre, autor, ingredientes){
+    constructor(nombre, autor,){
         this.nombre = nombre
         this.autor = autor
         this.ingredientes = []
@@ -28,7 +28,7 @@ export default class Receta{
         console.log("")
         console.log("------------- Los Ingredientes Son: -------------")
         console.log("")
-        
+
         this.ingredientes.forEach( (ingrediente, i) => {
         console.log(`${i+1}. ${ingrediente.getDescripcion()}`)
         })
