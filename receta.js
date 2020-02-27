@@ -23,16 +23,18 @@ export default class Receta{
         return total
     }
 
+    getNumeroIngredientes(){
+        this.ingredientes.forEach( (ingrediente, i) => {
+            console.log(`${i+1}. ${ingrediente.getDescripcion()}`)
+        })
+    }
+
     imprimirEnConsola(){
         console.log(`Receta de: "${this.nombre}" El autor de esta receta es: ${this.autor}`)
         console.log("")
         console.log("------------- Los Ingredientes Son: -------------")
         console.log("")
-
-        this.ingredientes.forEach( (ingrediente, i) => {
-        console.log(`${i+1}. ${ingrediente.getDescripcion()}`)
-        })
-
+        console.log(`${this.getNumeroIngredientes()}`)
         console.log(`El costo total para poder hacer esta receta es de $${this.getCosto()} pesos`)
         console.log (" ")
         console.log("¡Listo ya tienes todos los ingredientes necesarios para hacer esta receta!")
